@@ -3,6 +3,8 @@
 # Fail fast, fail early, fail loud.
 set -euo pipefail
 
+workspace_dir="$PWD"
+
 echo "==> Upgrading packages"
 sudo apt-get update
 sudo apt-get upgrade --yes
@@ -16,7 +18,7 @@ grep -qxF 'eval "$(starship init bash)"' "$HOME/.bashrc" || echo 'eval "$(starsh
 grep -qxF 'eval "$(starship init zsh)"' "$HOME/.zshrc" || echo 'eval "$(starship init zsh)"' >> "$HOME/.zshrc"
 mkdir -p "$HOME/.config"
 if [ ! -f "$HOME/.config/starship.toml" ]; then
-    cp .devcontainer/starship.toml "$HOME/.config/starship.toml"
+    cp "$workspace_dir/.devcontainer/starship.toml" "$HOME/.config/starship.toml"
 fi
 
 echo "==> Installing Codex and Claude Code"
@@ -24,11 +26,11 @@ npm config set allow-scripts=@anthropic-ai/claude-code --location=user
 npm install -g @openai/codex @anthropic-ai/claude-code
 
 echo "==> Cloning zed"
-if [ ! -d zed ]; then
-    git clone https://github.com/pupeno/zed.git zed
+if [ ! -d "$workspace_dir/zed" ]; then
+    git clone https://github.com/pupeno/zed.git "$workspace_dir/zed"
 fi
 
-cd zed
+cd "$workspace_dir/zed"
 
 echo "==> Installing Zed's build dependencies"
 ./script/linux
