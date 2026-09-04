@@ -1,12 +1,8 @@
 # Pablo's Zed Contributing Workspace
 
-This is a repo that contains some things that I find useful when contributing to [Zed](https://github.com/zed-industries/zed). It contains the devcontainer configuration.
+This repository is Pablo's development workspace for contributing to [Zed](https://github.com/zed-industries/zed).
 
-## Setup
-
-Clone this repository, then simply start the devcontainer using [Zed](https://zed.dev), [VS Code](https://code.visualstudio.com/), or the [Dev Container CLI](https://containers.dev/guide/cli).
-
-It will clone Zed into `zed`, set it up, everything!
+It keeps the devcontainer configuration and documentation together, while the `zed/` directory contains the Zed source code itself.
 
 ## Tickets
 
@@ -16,3 +12,36 @@ It will clone Zed into `zed`, set it up, everything!
 ## Pull requests
 
 - [#63034 - Preserve Docker exec command arguments](https://github.com/zed-industries/zed/pull/63034): fixes [#62964](https://github.com/zed-industries/zed/issues/62964) and [#63033](https://github.com/zed-industries/zed/issues/63033) (duplicate) by passing lifecycle commands to Docker as distinct arguments instead of flattening them into a space-separated string.
+
+## Setup
+
+Clone this repository into a directory named `zed`:
+
+```bash
+git clone https://github.com/pupeno/zed-workspace.git zed
+```
+
+Open it in [Zed](https://zed.dev), then reopen it in its devcontainer.
+
+## Common Commands
+
+Pull Zed:
+
+```bash
+cd /workspaces/zed/zed
+git pull
+```
+
+Run Zed:
+
+```bash
+cd /workspaces/zed/zed
+cargo run
+```
+
+Run all tests:
+
+```bash
+cd /workspaces/zed/zed
+cargo test --workspace
+```

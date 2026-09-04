@@ -25,9 +25,10 @@ echo "==> Installing Codex and Claude Code"
 npm config set allow-scripts=@anthropic-ai/claude-code --location=user
 npm install -g @openai/codex @anthropic-ai/claude-code
 
-echo "==> Cloning zed"
-if [ ! -d "$workspace_dir/zed" ]; then
-    git clone https://github.com/pupeno/zed.git "$workspace_dir/zed"
+echo "==> Initializing the Zed submodule"
+if [ ! -e "$workspace_dir/zed/.git" ]; then
+    git -C "$workspace_dir" submodule sync -- zed
+    git -C "$workspace_dir" submodule update --init zed
 fi
 
 cd "$workspace_dir/zed"
