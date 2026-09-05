@@ -1,0 +1,19 @@
+{
+    "name": "zed-lifecycle-test",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+
+    // Fixes the hostname so shell prompts and logs identify the container.
+    "runArgs": ["--hostname", "zed-lifecycle-test"],
+
+    "mounts": [
+        // One volume for the whole container home so all config survive a rebuild.
+        "source=zed-lifecycle-test-home,target=/home/vscode,type=volume"
+    ],
+
+    "initializeCommand": ".devcontainer/lifecycle.sh initializeCommand",
+    "onCreateCommand": ".devcontainer/lifecycle.sh onCreateCommand",
+    "updateContentCommand": ".devcontainer/lifecycle.sh updateContentCommand",
+    "postCreateCommand": ".devcontainer/lifecycle.sh postCreateCommand",
+    "postStartCommand": ".devcontainer/lifecycle.sh postStartCommand",
+    "postAttachCommand": ".devcontainer/lifecycle.sh postAttachCommand"
+}
