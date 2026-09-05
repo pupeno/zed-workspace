@@ -1,0 +1,5 @@
+{
+    "name": "z-minimal",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "runArgs": ["--hostname", "z-minimal"],
+}
