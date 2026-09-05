@@ -1,5 +1,5 @@
 {
-    "name": "zed-lifecycle-test",
+    "name": "z-lifecycle-test",
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
 
     // Fixes the hostname so shell prompts and logs identify the container.
