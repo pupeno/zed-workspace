@@ -5,7 +5,7 @@
 
     "mounts": [
         // One volume for the whole container home so all config survive a rebuild.
-        "source=zed-lifecycle-test-home,target=/home/vscode,type=volume"
+        "source=z-lifecycle-home,target=/home/vscode,type=volume"
     ],
 
     "initializeCommand": ".devcontainer/lifecycle.sh initializeCommand",
