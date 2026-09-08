@@ -6,11 +6,11 @@ It keeps the devcontainer configuration, documentation, and local experiments to
 
 ## Tickets
 
-- [#63828 - Connecting to a dev container, SSH, or WSL fails with a locally built Zed](https://github.com/zed-industries/zed/issues/63828): debug builds of Zed's remote server fail to embed their default settings, causing the server to panic when the source checkout is unavailable on the remote host.
 - [#61691 - Dev containers: feature `installsAfter` metadata is ignored, producing an install order that breaks the build](https://github.com/zed-industries/zed/issues/61691): devcontainer features are installed without honoring `installsAfter`, so ordering-dependent feature installs can break.
 
 ## Closed tickets
 
+- [#63828 - Connecting to a dev container, SSH, or WSL fails with a locally built Zed](https://github.com/zed-industries/zed/issues/63828): debug builds of Zed's remote server fail to embed their default settings, causing the server to panic when the source checkout is unavailable on the remote host.
 - [#63033 - Dev container lifecycle commands (e.g. postCreateCommand) are word-split and silently broken](https://github.com/zed-industries/zed/issues/63033): closed as a duplicate of [#62964](https://github.com/zed-industries/zed/issues/62964); string-form `postCreateCommand`/`postStartCommand` lost their argument boundaries, silently dropping arguments.
 
 ## Pull requests
