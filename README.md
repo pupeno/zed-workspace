@@ -2,7 +2,7 @@
 
 This repository is Pablo's development workspace for contributing to [Zed](https://github.com/zed-industries/zed).
 
-It keeps the devcontainer configuration and documentation together, while the `zed/` directory contains the Zed source code itself.
+It keeps the devcontainer configuration, documentation, and local experiments together.
 
 ## Tickets
 
@@ -20,13 +20,16 @@ It keeps the devcontainer configuration and documentation together, while the `z
 
 ## Setup
 
-Clone this repository into a directory named `zed`:
+Clone the workspace and run its setup script:
 
 ```bash
-git clone https://github.com/pupeno/zed-workspace.git zed
+mkdir zed
+git clone https://github.com/pupeno/zed-workspace.git zed/workspace
+zed/workspace/setup.sh
 ```
 
-Open it in [Zed](https://zed.dev), then reopen it in its devcontainer.
+Open the outer `zed/` directory in an editor with devcontainer support, then
+reopen it in its devcontainer.
 
 ## Common Commands
 
